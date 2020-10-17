@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/Poke.css'
 
 class Pokedex extends React.Component{
     constructor(){
@@ -37,7 +38,7 @@ class Pokedex extends React.Component{
 
     render(){
         return(
-            <div className="card text-center">
+            <div className="card text-center" className = "i_Fondo">
                 <div className="card-header">
                 </div>
                 <div className="card-body">
