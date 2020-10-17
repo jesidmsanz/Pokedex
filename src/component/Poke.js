@@ -12,13 +12,11 @@ class Pokedex extends React.Component{
     Api = async () =>{
         let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.name}`)
         let data = await res.json()
-        if(!this.state.form.name){
-            alert('No se encontro')
-        }else{
+        
             this.setState({
                 form: data            
             })
-        }
+        
         
     }
     handlechange = e =>{
@@ -41,7 +39,7 @@ class Pokedex extends React.Component{
         e.preventDefault()
     }
 
-    render(){
+    render(){ 
         return(
             <div className="card text-center i_Fondo">
                 <div className="card-header">
@@ -49,14 +47,14 @@ class Pokedex extends React.Component{
                 <div className="card-body">
                    <h1>Busca Tu Pokemon</h1>
                    <form onSubmit = {this.handleSubmit}>
-                       <label>Nombre Del Pokemon</label>
-                       <br/><br/>                       
+                       <h5>Nombre Del Pokemon</h5>
+                       <br/>                     
                        <input type="text" name = "name" onChange = {this.handlechange}/>
                        <br/><br/>
                        
                        <img src={this.state.imagen} alt=""/>
                        <br/><br/>
-                       <button type ="submit" className = "btn btn-primary">Mostrar</button>                       
+                       <button type ="submit" className = "btn btn-primary">Buscar Pokemon</button>                       
                    </form>
                 </div>
             </div>
