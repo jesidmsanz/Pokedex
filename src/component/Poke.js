@@ -12,9 +12,14 @@ class Pokedex extends React.Component{
     Api = async () =>{
         let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.name}`)
         let data = await res.json()
-        this.setState({
-            form: data            
-        })
+        if(!this.state.form.name){
+            alert('No se encontro')
+        }else{
+            this.setState({
+                form: data            
+            })
+        }
+        
     }
     handlechange = e =>{
         this.setState(
@@ -38,7 +43,7 @@ class Pokedex extends React.Component{
 
     render(){
         return(
-            <div className="card text-center" className = "i_Fondo">
+            <div className="card text-center i_Fondo">
                 <div className="card-header">
                 </div>
                 <div className="card-body">

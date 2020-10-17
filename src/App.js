@@ -7,7 +7,7 @@ class Renderizar extends React.Component{
     return(
       <div>
           
-          <h1>Hola desde App</h1>
+          <h1>Pokedex</h1>
           <Pokedex />
       </div>      
     )
